@@ -30,10 +30,10 @@ app.use('/api/feed', feedRoute);
 //     res.status(200).send('Welcome to the Login and SignUp API')
 // })
 
-app.use(express.static(path.join(__dirname, "../Fronten/build")));
+app.use(express.static(path.join(__dirname, "../Frontend/build")));
 
 app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+    res.sendFile(path.resolve(__dirname, "../Frontend/build/index.html"));
 })
 
 const port = process.env.PORT || 3000;
