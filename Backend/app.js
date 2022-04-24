@@ -30,11 +30,15 @@ app.use('/api/feed', feedRoute);
 //     res.status(200).send('Welcome to the Login and SignUp API')
 // })
 
-app.use(express.static(path.join(__dirname, "../Frontend/build")));
+app.use(express.static('public'));
 
-app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../Frontend/build/index.html"));
-})
+// app.use(express.static(path.join(__dirname, "../Frontend/build")));
+
+// app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "../Frontend/build/index.html"));
+// })
+
+app.use('/buzz', express.static(path.join(__dirname, '../Frontend/build')));
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}....`))
