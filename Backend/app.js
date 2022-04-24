@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+const path = require("path");
 const mongoose = require('./conn')
 var bodyparser = require('body-parser')
 const logger = require('./middleware/logger');
@@ -28,6 +29,12 @@ app.use('/api/feed', feedRoute);
 // app.get('/', (req,res) => {
 //     res.status(200).send('Welcome to the Login and SignUp API')
 // })
+
+app.use(express.static(path.join(__dirname, "../Fronten/build")));
+
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+})
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}....`))
