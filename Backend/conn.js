@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://jasmeen:jasmeen@cluster0.373uo.mongodb.net/buzzproject?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://dilsheen16:dil16kaur@cluster0.yqvfu.mongodb.net/BuzzApp?retryWrites=true&w=majority')
 
 mongoose.connection.on('error', (err) => {
     console.log('connection failed');
