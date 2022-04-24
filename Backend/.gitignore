@@ -107,6 +107,5 @@ dist
 .vscode/
 
 #Misc file
-utils/
 tmp/
 
